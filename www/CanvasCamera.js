@@ -329,29 +329,28 @@ CanvasCamera.prototype.createRenderer = (function (element, canvasCamera) {
 
     CanvasCamera.Renderer.prototype.resize = function() {
         if (this.size) {
-            var pixelRatio = window.devicePixelRatio || 1;
             if (this.size.width && !isNaN(this.size.width)) {
                 if (!this.fullscreen && parseFloat(this.size.width) <= parseFloat(window.innerWidth)) {
-                    this.element.width = parseFloat(this.size.width * pixelRatio);
+                    this.element.width = parseFloat(this.size.width);
                     this.element.style.width = parseFloat(this.size.width) + 'px';
                 } else {
-                    this.element.width = parseFloat(window.innerWidth * pixelRatio);
+                    this.element.width = parseFloat(window.innerWidth);
                     this.element.style.width = parseFloat(window.innerWidth) + 'px';
                 }
             } else {
-                this.element.width = parseFloat(window.innerWidth * pixelRatio);
+                this.element.width = parseFloat(window.innerWidth);
                 this.element.style.width = parseFloat(window.innerWidth) + 'px';
             }
             if (this.size.height && !isNaN(this.size.height)) {
                 if (!this.fullscreen && parseFloat(this.size.height) <= parseFloat(window.innerHeight)) {
-                    this.element.height = parseFloat(this.size.height * pixelRatio);
+                    this.element.height = parseFloat(this.size.height);
                     this.element.style.height = parseFloat(this.size.height) + 'px';
                 } else {
-                    this.element.height = parseFloat(window.innerHeight * pixelRatio);
+                    this.element.height = parseFloat(window.innerHeight);
                     this.element.style.height = parseFloat(window.innerHeight) + 'px';
                 }
             } else {
-                this.element.height = parseFloat(window.innerHeight * pixelRatio);
+                this.element.height = parseFloat(window.innerHeight);
                 this.element.style.height = parseFloat(window.innerHeight) + 'px';
             }
         }
